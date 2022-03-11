@@ -11,9 +11,10 @@ const connectDB = require('./config/db');
 //   // ['http://localhost:3000', 'http://localhost:5000', 'http://localhost:3300']
 // }
 connectDB();
+
 // Default configuration looks like
 const corsOptions = {
-    "origin": "*",
+    "origin": process.env.ALLOWED_CLIENTS.split(','),
     "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
     "preflightContinue": false,
     "optionsSuccessStatus": 204

@@ -13,14 +13,15 @@ const connectDB = require('./config/db');
 connectDB();
 
 // Default configuration looks like
-const corsOptions = {
-    "origin": process.env.ALLOWED_CLIENTS.split(','),
-    "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
-    "preflightContinue": false,
-    "optionsSuccessStatus": 204
-};
+// const corsOptions = {
+//     "origin": process.env.ALLOWED_CLIENTS.split(','),
+//     "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+//     "preflightContinue": false,
+//     "optionsSuccessStatus": 204
+// };
 
-app.use(cors(corsOptions))
+// app.use(cors(corsOptions))
+app.use(cors());
 app.use(express.static('public'));
 
 
